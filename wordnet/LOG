@@ -1,0 +1,1 @@
+python makeHypernymTree.py ../glove/gloveVocab.pickle treeDict
