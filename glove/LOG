@@ -1,0 +1,1 @@
+bzcat vectors_50d.txt.bz2 | awk '{print $1}' | python makeGloveVocab.py > gloveVocab.pickle
