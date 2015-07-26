@@ -1,1 +1,2 @@
-python makeHypernymTree.py ../glove/gloveVocab.pickle treeDict
+#python makeHypernymTree.py ../glove/gloveVocab.pickle treeDict
+python makeWordNetVocab.py treeDict_hyponyms.pickle treeDict_hypernyms.pickle > wordnetVocab.pickle
