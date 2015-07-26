@@ -8,9 +8,9 @@ def main():
 
     for line in sys.stdin:
         thisLine = line.split()
-        try:
-            vec = asarray(map(lambda x: float(x),thisLine[1:]))
-            Vectors[word] = vec/linalg.norm(vec)
+        vec = asarray(map(lambda x: float(x),thisLine[1:]))
+        word = thisLine[0]
+        Vectors[word] = vec/linalg.norm(vec)
 
     pickle.dump(Vectors, sys.stdout)
 
