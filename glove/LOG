@@ -1,1 +1,4 @@
-bzcat vectors_50d.txt.bz2 | awk '{print $1}' | python makeGloveVocab.py > gloveVocab.pickle
+cd /afs/cs.stanford.edu/u/nayakne/NLP-HOME/scr/freezing-hipster/glove
+
+#bzcat vectors_50d.txt.bz2 | awk '{print $1}' | python makeGloveVocab.py > gloveVocab.pickle
+cat /u/scr/nlp/data/wordvectors/en/glove/vectors_50d.txt | python readGloveVectors.py ../wordnet/wordnetVocab.pickle > gloveVectors_50n.pickle # 50 dimensions, normalized
