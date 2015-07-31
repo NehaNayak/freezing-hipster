@@ -11,7 +11,12 @@ def moveNode(node, offset):
         for hypo in hyponymMap[node]:
             moveNode(hypo, offset)
 
-def getTraversalOrder(hyponymMap):
+def main():
+    # load things
+    hyponymMap = pickle.load(open(sys.argv[1],'r'))
+    glovemus = pickle.load(open(sys.argv[2],'r'))
+    mus = {}
+
     # traversal things
     toVisit = [1]
     visitOrder = [] # gets non-leaf nodes in BFS order
@@ -33,18 +38,6 @@ def getTraversalOrder(hyponymMap):
                 toVisit.append(hyponym)
 
     visitOrder = list(reversed(visitOrder))[:-1] # remove dummy top node
-    
-    return visitOrder
-
-def main():
-    # load things
-    hyponymMap = pickle.load(open(sys.argv[1],'r'))
-    glovemus = pickle.load(open(sys.argv[2],'r'))
-    mus = {}
-
-    visitOrder = getVisitOrder(hyponymMap)
-
-    print visitOrder
 
     learningRate = 0.0001
     learningRate2 = 0.0001
