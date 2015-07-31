@@ -1,2 +1,2 @@
-cat MEN_dataset_lemma_form.dev | tr '-' ' ' | tr ' ' '\t' |cut -f 1,3,5 | head > train_MEN
-cat MTurk.csv | tr ',' '\t' | head > train_MTurk
+#cat MEN_dataset_lemma_form.dev | tr '-' ' ' | tr ' ' '\t' |cut -f 1,3,5 > train_MEN
+cat MTurk.csv | tr ',' '\t' > train_MTurk
