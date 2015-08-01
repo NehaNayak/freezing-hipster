@@ -6,8 +6,8 @@ import pickle
 
 gloveLemmas = pickle.load(open(sys.argv[1],'r'))
 
-hyperPickleFile = open(sys.argv[2]+"_hypernyms.pickle",'w')
-hypoPickleFile = open(sys.argv[2]+"_hyponyms.pickle",'w')
+#hyperPickleFile = open(sys.argv[2]+"_hypernyms.pickle",'w')
+#hypoPickleFile = open(sys.argv[2]+"_hyponyms.pickle",'w')
 
 Hypernyms = defaultdict(list)
 Hyponyms = defaultdict(list)
@@ -20,6 +20,10 @@ for syn in list(wn.all_synsets()):
             if hyplem in gloveLemmas:
                 Hypernyms[syn.name()].append(hyp.name())
                 Hyponyms[hyp.name()].append(syn.name())
+
+tops = set(Hyponyms.keys())-set(Hypernyms.keys())
+print tops
+dsds
 
 pickle.dump(Hypernyms, hyperPickleFile) 
 pickle.dump(Hyponyms, hypoPickleFile) 
