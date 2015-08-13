@@ -21,7 +21,8 @@ for syn in list(wn.all_synsets()):
                 Hypernyms[syn.name()].append(hyp.name())
                 Hyponyms[hyp.name()].append(syn.name())
 
-tops = set(Hyponyms.keys())-set(Hypernyms.keys())
+print Hyponyms.values()
+tops = set(Hyponyms.keys())-set([item for sublist in Hyponyms.values() for item in sublist])
 print tops
 dsds
 
